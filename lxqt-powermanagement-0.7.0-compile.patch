@@ -1,0 +1,24 @@
+--- lxqt-powermanagement-0.7.0/src/lid.cpp.omv~	2014-05-08 02:12:05.964143731 +0200
++++ lxqt-powermanagement-0.7.0/src/lid.cpp	2014-05-08 02:12:08.907497021 +0200
+@@ -27,7 +27,7 @@
+ #include "lid.h"
+ #include <QDBusConnection>
+ #include <QDBusReply>
+-#include <qt4/QtCore/qobject.h>
++#include <QtCore/qobject.h>
+ #include <QDebug>
+ 
+ Lid::Lid()
+--- lxqt-powermanagement-0.7.0/src/lidwatcher.cpp.omv~	2014-05-08 02:12:15.844210724 +0200
++++ lxqt-powermanagement-0.7.0/src/lidwatcher.cpp	2014-05-08 02:12:19.477568673 +0200
+@@ -27,8 +27,8 @@
+ #include <QTimer>
+ #include <QCoreApplication>
+ #include <lxqt/lxqtautostartentry.h>
+-#include <qt4/QtCore/qprocess.h>
+-#include <qt4/QtCore/qtextstream.h>
++#include <QtCore/qprocess.h>
++#include <QtCore/qtextstream.h>
+ #include <QDebug>
+ #include "lidwatcher.h"
+ #include "../config/powermanagementsettings.h"

@@ -1,6 +1,6 @@
 Name: lxqt-powermanagement
 Version: 0.7.0
-Release: 2
+Release: 3
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 Patch0: lxqt-powermanagement-0.7.0-compile.patch
 Summary: Power management module for LXQt

@@ -1,4 +1,4 @@
-%define git 20140803
+%define git 0
 Name: lxqt-powermanagement
 Version: 0.8.0
 %if %git
@@ -15,8 +15,8 @@ Group: Graphical desktop/KDE
 BuildRequires: cmake
 BuildRequires: cmake(lxqt-qt5)
 BuildRequires: qt5-devel
-BuildRequires:	cmake(Qt5LinguistTools)
-BuildRequires:	cmake(Qt5X11Extras)
+BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires: cmake(Qt5X11Extras)
 
 %description
 Power management module for LXQt
@@ -25,7 +25,7 @@ Power management module for LXQt
 %if %git
 %setup -qn %{name}-%{git}
 %else
-%setup -q -c %{name}-%{version}
+%setup -q
 %endif
 %apply_patches
 %cmake -DUSE_QT5:BOOL=ON

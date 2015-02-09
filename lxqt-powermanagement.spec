@@ -40,3 +40,5 @@ Power management module for LXQt
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*/*/*/laptop-lid.svg
+%{_datadir}/lxqt/translations/lxqt-config-powermanagement
+%{_datadir}/lxqt/translations/lxqt-powermanagement

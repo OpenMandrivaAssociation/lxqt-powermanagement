@@ -47,3 +47,4 @@ desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*/*/*/laptop-lid.svg
+%{_datadir}/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_*.qm

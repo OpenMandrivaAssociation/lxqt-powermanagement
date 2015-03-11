@@ -5,7 +5,7 @@ Version: 0.9.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 3
+Release: 4
 Source0: http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Power management module for LXQt
@@ -13,10 +13,19 @@ URL: http://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake
+BuildRequires: qmake5
 BuildRequires: cmake(lxqt)
-BuildRequires: qt5-devel
-BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5X11Extras)
+BuildRequires: cmake(Qt5Svg)
+BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires: cmake(qt5xdg)
+BuildRequires: cmake(KF5Solid)
+BuildRequires: pkgconfig(xcb)
+BuildRequires: pkgconfig(x11-xcb)
+BuildRequires: pkgconfig(xcb-screensaver)
+BuildRequires: pkgconfig(xcb-dpms)
 
 %description
 Power management module for LXQt.
@@ -28,7 +37,7 @@ Power management module for LXQt.
 %setup -q
 %endif
 %apply_patches
-%cmake -DUSE_QT5:BOOL=ON
+%cmake_qt5
 
 %build
 %make -C build

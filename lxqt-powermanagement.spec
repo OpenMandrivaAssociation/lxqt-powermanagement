@@ -5,7 +5,7 @@ Version: 0.12.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
+Release: 2
 Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Power management module for LXQt
@@ -67,4 +67,4 @@ export LC_ALL=en_US.utf-8
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*/*/*/laptop-lid.svg
 %{_datadir}/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_*.qm
-%{_sysconfdir}/xdg/qt5/autostart/lxqt-powermanagement.desktop
+%{_sysconfdir}/xdg/autostart/lxqt-powermanagement.desktop

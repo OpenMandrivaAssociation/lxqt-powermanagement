@@ -1,11 +1,11 @@
 %define git 0
 Name: lxqt-powermanagement
-Version: 0.12.0
+Version: 0.13.0
 %if %git
-Release: 0.%git.1
+Release: 1.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 3
+Release: 1
 Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Power management module for LXQt

@@ -2,7 +2,7 @@
 Name: lxqt-powermanagement
 Version: 0.13.0
 %if %git
-Release: 1.%git.1
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
 Release: 1
@@ -41,7 +41,9 @@ Power management module for LXQt.
 %endif
 %apply_patches
 
-%cmake_qt5 -G Ninja
+%cmake_qt5 \
+	-DPULL_TRANSLATIONS:BOOL=OFF \
+	-G Ninja
 
 %build
 # Need to be in a UTF-8 locale so grep (used by the desktop file
@@ -59,12 +61,8 @@ export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
 %ninja_install -C build
 
-%find_lang %{name} --with-qt
-%find_lang lxqt-config-powermanagement --with-qt
-
-%files -f %{name}.lang -f lxqt-config-powermanagement.lang
+%files
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*/*/*/laptop-lid.svg
-%{_datadir}/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_*.qm
 %{_sysconfdir}/xdg/autostart/lxqt-powermanagement.desktop

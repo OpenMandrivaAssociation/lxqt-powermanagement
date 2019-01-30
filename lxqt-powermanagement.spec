@@ -1,11 +1,11 @@
 %define git 0
 Name: lxqt-powermanagement
-Version: 0.13.0
+Version: 0.14.0
 %if %git
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
+Release: 1
 Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 Summary: Power management module for LXQt
@@ -60,8 +60,9 @@ export LC_ALL=en_US.utf-8
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
 %ninja_install -C build
+%find_lang %{name} --with-qt --all-name
 
-%files
+%files -f %{name}.lang
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*/*/*/laptop-lid.svg

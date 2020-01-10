@@ -39,7 +39,7 @@ Power management module for LXQt.
 %else
 %setup -q
 %endif
-%apply_patches
+%autopatch -p1
 
 %cmake_qt5 \
 	-DPULL_TRANSLATIONS:BOOL=OFF \

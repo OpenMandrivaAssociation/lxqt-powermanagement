@@ -1,12 +1,12 @@
 %define git 0
 Name: lxqt-powermanagement
-Version: 0.14.1
+Version: 0.15.0
 %if %git
-Release: 1.%git.1
+Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 2
-Source0: https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
+Release: 1
+Source0: https://github.com/lxqt/lxqt-powermanagement/releases/download/%{version}/lxqt-powermanagement-%{version}.tar.xz
 %endif
 Summary: Power management module for LXQt
 URL: http://lxqt.org/
@@ -72,3 +72,7 @@ install -m644 %{SOURCE1} %{buildroot}%{_datadir}/lxqt/lxqt-powermanagement.conf
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/*/*/*/laptop-lid.svg
 %{_sysconfdir}/xdg/autostart/lxqt-powermanagement.desktop
+%lang(arn) %{_datadir}/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_arn.qm
+%lang(ast) %{_datadir}/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ast.qm
+%lang(arn) %{_datadir}/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_arn.qm
+%lang(ast) %{_datadir}/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ast.qm

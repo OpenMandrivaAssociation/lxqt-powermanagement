@@ -17,6 +17,7 @@ BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: ninja
 BuildRequires: cmake(lxqt)
+BuildRequires: cmake(lxqt-globalkeys-ui)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5X11Extras)

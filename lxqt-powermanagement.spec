@@ -5,7 +5,7 @@ Version: 1.0.0
 Release: 0.%git.1
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
+Release: 2
 Source0: https://github.com/lxqt/lxqt-powermanagement/releases/download/%{version}/lxqt-powermanagement-%{version}.tar.xz
 %endif
 Summary: Power management module for LXQt

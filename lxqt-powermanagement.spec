@@ -1,13 +1,12 @@
-%define git 0
+#define git 0
 Name: lxqt-powermanagement
 Version: 1.4.0
-%if %git
-Release: 1.%git.1
+%if 0%{?git:1}
 Source0: %{name}-%{git}.tar.xz
 %else
-Release: 1
 Source0: https://github.com/lxqt/lxqt-powermanagement/releases/download/%{version}/lxqt-powermanagement-%{version}.tar.xz
 %endif
+Release: %{?git:0.%{git}.}1
 Summary: Power management module for LXQt
 URL: http://lxqt.org/
 License: GPL
@@ -36,12 +35,7 @@ BuildRequires: lxqt-build-tools git-core
 Power management module for LXQt.
 
 %prep
-%if %git
-%setup -qn %{name}-%{git}
-%else
-%setup -q
-%endif
-%autopatch -p1
+%autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
 
 %cmake_qt5 \
 	-DPULL_TRANSLATIONS:BOOL=OFF \

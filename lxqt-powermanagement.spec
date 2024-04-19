@@ -1,6 +1,6 @@
 #define git 0
 Name: lxqt-powermanagement
-Version: 1.4.0
+Version: 2.0.0
 %if 0%{?git:1}
 Source0: %{name}-%{git}.tar.xz
 %else
@@ -13,18 +13,17 @@ License: GPL
 Group: Graphical desktop/KDE
 Source1: lxqt-powermanagement.conf
 BuildRequires: cmake
-BuildRequires: qmake5
 BuildRequires: ninja
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(lxqt-globalkeys-ui)
-BuildRequires: cmake(Qt5Widgets)
-BuildRequires: cmake(Qt5DBus)
-BuildRequires: cmake(Qt5X11Extras)
-BuildRequires: cmake(Qt5Svg)
-BuildRequires: cmake(Qt5LinguistTools)
-BuildRequires: cmake(qt5xdg)
-BuildRequires: cmake(KF5Solid)
-BuildRequires: cmake(KF5IdleTime)
+BuildRequires: cmake(Qt6Widgets)
+BuildRequires: cmake(Qt6DBus)
+BuildRequires: cmake(Qt6Svg)
+BuildRequires: cmake(Qt6SvgWidgets)
+BuildRequires: cmake(Qt6LinguistTools)
+BuildRequires: cmake(qt6xdg)
+BuildRequires: cmake(KF6Solid)
+BuildRequires: cmake(KF6IdleTime)
 BuildRequires: pkgconfig(xcb)
 BuildRequires: pkgconfig(x11-xcb)
 BuildRequires: pkgconfig(xcb-screensaver)
@@ -37,7 +36,7 @@ Power management module for LXQt.
 %prep
 %autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
 
-%cmake_qt5 \
+%cmake \
 	-DPULL_TRANSLATIONS:BOOL=OFF \
 	-G Ninja
 

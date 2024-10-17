@@ -8,7 +8,7 @@ Source0: https://github.com/lxqt/lxqt-powermanagement/releases/download/%{versio
 %endif
 Release: %{?git:0.%{git}.}2
 Summary: Power management module for LXQt
-URL: http://lxqt.org/
+URL: https://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 Source1: lxqt-powermanagement.conf

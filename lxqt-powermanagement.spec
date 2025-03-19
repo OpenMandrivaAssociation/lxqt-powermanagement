@@ -6,7 +6,7 @@ Source0: %{name}-%{git}.tar.xz
 %else
 Source0: https://github.com/lxqt/lxqt-powermanagement/releases/download/%{version}/lxqt-powermanagement-%{version}.tar.xz
 %endif
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 Summary: Power management module for LXQt
 URL: https://lxqt.org/
 License: GPL

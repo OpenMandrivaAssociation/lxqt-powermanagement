@@ -36,11 +36,10 @@ Power management module for LXQt.
 %prep
 %autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
 
+%build
 %cmake \
 	-DPULL_TRANSLATIONS:BOOL=OFF \
 	-G Ninja
-
-%build
 # Need to be in a UTF-8 locale so grep (used by the desktop file
 # translation generator) doesn't scream about translations containing
 # "binary" (non-ascii) characters

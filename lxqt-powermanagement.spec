@@ -6,14 +6,14 @@ Source0: %{name}-%{git}.tar.xz
 %else
 Source0: https://github.com/lxqt/lxqt-powermanagement/releases/download/%{version}/lxqt-powermanagement-%{version}.tar.xz
 %endif
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 Summary: Power management module for LXQt
 URL: https://lxqt.org/
 License: GPL
 Group: Graphical desktop/KDE
 Source1: lxqt-powermanagement.conf
-BuildRequires: cmake
-BuildRequires: ninja
+BuildSystem: cmake
+BuildOption: -DPULL_TRANSLATIONS:BOOL=OFF
 BuildRequires: cmake(lxqt)
 BuildRequires: cmake(lxqt-globalkeys-ui)
 BuildRequires: cmake(Qt6Widgets)
@@ -33,31 +33,17 @@ BuildRequires: lxqt-build-tools git-core
 %description
 Power management module for LXQt.
 
-%prep
-%autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
-
-%build
-%cmake \
-	-DPULL_TRANSLATIONS:BOOL=OFF \
-	-G Ninja
-# Need to be in a UTF-8 locale so grep (used by the desktop file
-# translation generator) doesn't scream about translations containing
-# "binary" (non-ascii) characters
+%build -p
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
-%ninja_build
 
-%install
-# Need to be in a UTF-8 locale so grep (used by the desktop file
-# translation generator) doesn't scream about translations containing
-# "binary" (non-ascii) characters
+%install -p
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
-%ninja_install -C build
+
+%install -a
 mkdir -p %{buildroot}%{_datadir}/lxqt
 install -m644 %{SOURCE1} %{buildroot}%{_datadir}/lxqt/lxqt-powermanagement.conf
-
-%find_lang %{name} --with-qt --all-name
 
 %files -f %{name}.lang
 %{_bindir}/*

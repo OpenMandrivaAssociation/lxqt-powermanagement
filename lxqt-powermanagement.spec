@@ -1,6 +1,6 @@
 #define git 0
 Name: lxqt-powermanagement
-Version: 2.3.0
+Version: 2.4.0
 %if 0%{?git:1}
 Source0: %{name}-%{git}.tar.xz
 %else
